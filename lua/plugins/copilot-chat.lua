@@ -12,6 +12,19 @@ return {
   },
   build = function()
     vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
+    local chat = require("CopilotChat")
+
+    vim.api.CopilotChatOpen = function()
+      chat.open()
+    end
+
+    _G.CopilotChatClose = function()
+      chat.close()
+    end
+
+    _G.CopilotChatToggle = function()
+      chat.toggle()
+    end
   end,
   event = "VeryLazy",
   keys = {
@@ -19,5 +32,8 @@ return {
     { "<leader>cct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
     { "<leader>ccr", "<cmd>CopilotChatReview<cr>", desc = "CopilotChat - Review code" },
     { "<leader>ccR", "<cmd>CopilotChatRefactor<cr>", desc = "CopilotChat - Refactor code" },
+    { "<leader>cco", "<cmd>lua CopilotChatOpen()<cr>", desc = "CopilotChat - Open" },
+    { "<leader>ccc", "<cmd>lua CopilotChatClose()<cr>", desc = "CopilotChat - Close" },
+    { "<leader>cctoggle", "<cmd>lua CopilotChatToggle()<cr>", desc = "CopilotChat - Toggle" },
   },
 }
