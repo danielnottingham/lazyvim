@@ -226,7 +226,7 @@ return {
         use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
         -- instead of relying on nvim autocmd events.
         window = {
-          position = "right",
+          position = "left",
           mappings = {
             ["<bs>"] = "navigate_up",
             ["."] = "set_root",

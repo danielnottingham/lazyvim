@@ -3,6 +3,10 @@ return {
   -- Disable default <tab> and <s-tab> behavior in LuaSnip
   {
     "L3MON4D3/LuaSnip",
+    dependencies = {
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
+    },
     event = "VeryLazy",
     keys = function()
       return {}
