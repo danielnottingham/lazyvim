@@ -7,6 +7,10 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
     },
+    config = function()
+      require("luasnip").filetype_extend("ruby", { "rails" })
+      -- require("luasnip.loaders.from_vscode").lazy_load()
+    end,
     event = "VeryLazy",
     keys = function()
       return {}

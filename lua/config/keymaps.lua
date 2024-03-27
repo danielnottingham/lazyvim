@@ -23,3 +23,13 @@ keymap.set("n", "<CR>", ":normal ciw<CR>a", opts)
 keymap.set("n", "[<leader>", ":call append(line('.') - 1, '')<CR>", opts)
 -- Maps a key to add a line below the cursor
 keymap.set("n", "]<leader>", ":call append(line('.'), '')<CR>", opts)
+
+-- Maps a key to wrap the word under the cursor with [], "", () and {}
+keymap.set("n", "<leader>[]", "viw<Esc>`>a]<Esc>`<i[<Esc>", opts)
+keymap.set("v", "<leader>[]", "<Esc>`>a]<Esc>`<i[<Esc>", opts)
+keymap.set("n", '<leader>"', 'viw<Esc>`>a"<Esc>`<i"<Esc>', opts)
+keymap.set("v", '<leader>"', '<Esc>`>a"<Esc>`<i"<Esc>', opts)
+keymap.set("n", "<leader>()", "viw<Esc>`>a)<Esc>`<i(<Esc>", opts)
+keymap.set("v", "<leader>()", "<Esc>`>a)<Esc>`<i(<Esc>", opts)
+keymap.set("n", "<leader>{}", "viw<Esc>`>a}<Esc>`<i{<Esc>", opts)
+keymap.set("v", "<leader>{}", "<Esc>`>a}<Esc>`<i{<Esc>", opts)
